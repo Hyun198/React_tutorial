@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
 function Component() {
 
-    const [name, setName] = useState("Guest");
-    const [quantity, setQuantity] = useState(1);
-    const [comment, setComment] = useState("")
+    const [foods, setFoods] = useState(["Apple","Orange","Banana"]);
 
-    function handleNameChange(e) {
-        setName(e.target.value);
+    function HandleAddFood() {
+        const newFood = document.getElementById("foodInput").value;
+        document.getElementById("foodInput").value = "";
+        
+        setFoods(f=> [...f,newFood]);
+        
     }
 
-    function handleQuantityChange(e) {
-        setQuantity(e.target.value);
-    }
-
-    function handleCommentChange(e) {
-        setComment(e.target.value);
+    function HandleRemoveFood(index) {
+        setFoods(foods.filter((_, i)=> i !== index));
     }
 
     return (
-        <div>
-            <input value={name} onChange={handleNameChange}/>
-            <p>Name: {name}</p>
-            <input value={quantity} onChange={handleQuantityChange} type="number" />
-            <p>Quantity: {quantity}</p>
-            <textarea value={comment} onChange={handleCommentChange} placeholder="Enter delivery Instructions"/>
-            <p>Comment: {comment}</p>
-        </div>
+        <>
+            <div>
+                <h2>List of Food</h2>
+                <ul>
+                    {foods.map((food, index) => <li key={index} onClick={()=>HandleRemoveFood(index) }>{food}</li>)}
+                </ul>
+                <input type="text" id="foodInput" placeholder="Enter food name" />
+                <button onClick={HandleAddFood}>Add Food</button>
+            </div>
+        </>
     )
-
 }
 
 export default Component
