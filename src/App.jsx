@@ -12,6 +12,7 @@ function App() {
       <Card name="hyun" age={26} profilePic={profilePic}  />
       <Card />
       <Card />
+
       <Footer />
     </>
   );
