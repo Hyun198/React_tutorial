@@ -109,6 +109,53 @@
     cursor: pointer;
 }
 
+.Object_list {
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 50px 20px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+    border-radius: 5px;
+}
+
+.Object_list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Object_list li {
+    list-style: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.Object_list input {
+    width: 250px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.Object_list input::placeholder {
+    font-weight: bold;
+    font-family: sans-serif;
+    opacity: 0.5;
+}
+
+.car-add_button {
+    width: 150px;
+    height: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0px 5px;
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 footer {
     text-align: center;
 }
